@@ -38,6 +38,24 @@
       <artifactId>mysql-connector-java</artifactId>
     </dependency>
 
+    <!-- Flyway -->
+    <dependency>
+      <groupId>org.flywaydb</groupId>
+      <artifactId>flyway-core</artifactId>
+    </dependency>
+
+    <dependency>
+      <groupId>org.flywaydb</groupId>
+      <artifactId>flyway-mysql</artifactId>
+    </dependency>
+
+    <!-- Objetos JSON -->
+    <dependency>
+      <groupId>org.json</groupId>
+      <artifactId>json</artifactId>
+      <version>20211205</version>
+    </dependency>
+
   </dependencies>
 
   <build>

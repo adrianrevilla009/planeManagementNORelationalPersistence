@@ -26,6 +26,10 @@ public class Avion {
     @OneToMany(cascade=CascadeType.ALL, mappedBy="avion")
     private List<Revision> revisiones;
 
+    // El objeto JSON se maneja como String en la entidad
+    @Column(columnDefinition="json")
+    private String revisiones_json;
+
     public Avion() {};
 
     public Avion(String matricula, String fabricante, String modelo, long horasVuelo) {
@@ -103,6 +107,14 @@ public class Avion {
 
     public void setRevisiones(List<Revision> revisiones) {
         this.revisiones = revisiones;
+    }
+
+    public String getRevisiones_json() {
+        return revisiones_json;
+    }
+
+    public void setRevisiones_json(String revisiones_json) {
+        this.revisiones_json = revisiones_json;
     }
 
     @Override
