@@ -34,10 +34,20 @@ public class DatabaseLoader implements CommandLineRunner {
     @Autowired
     private RevisionRepository revisionRepository;
 
+    @Autowired
+    private ProvinciaRepository provinciaRepository;
+
     @Override
     public void run(String... args) throws Exception {
+        // hybrid database
         List<MecanicoAvionDTO> mecanicoAvionDTOList = this.mecanicoRepository.obtenerMecanicosParaCadaAvion();
         muestraDatos("Mecanico avion dto list", mecanicoAvionDTOList);
+        // TODO falta la segunda query
+        // no sql database
+        List<Provincia> provinciaList = this.provinciaRepository.findAll();
+        muestraDatos("Find all provincia list", provinciaList);
+        List<ComunidadesProvinciasDTO> comunidadesProvinciasDTOList = this.provinciaRepository.findCommunitiesAndNumberProvinces();
+        muestraDatos("Find communities and number province list", comunidadesProvinciasDTOList);
 
     }
 
