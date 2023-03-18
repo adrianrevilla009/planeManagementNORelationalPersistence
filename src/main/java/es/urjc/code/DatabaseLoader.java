@@ -42,7 +42,8 @@ public class DatabaseLoader implements CommandLineRunner {
         // hybrid database
         List<MecanicoAvionDTO> mecanicoAvionDTOList = this.mecanicoRepository.obtenerMecanicosParaCadaAvion();
         muestraDatos("Mecanico avion dto list", mecanicoAvionDTOList);
-        // TODO falta la segunda query
+        List<TripulanteDTO> tripulanteDTOList = this.tripulanteRepository.vuelosHorasPorTripulante();
+        muestraDatos("Tripulantes vuelos dto list", tripulanteDTOList);
         // no sql database
         List<Provincia> provinciaList = this.provinciaRepository.findAll();
         muestraDatos("Find all provincia list", provinciaList);
